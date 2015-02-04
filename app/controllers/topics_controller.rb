@@ -1,15 +1,20 @@
 class TopicsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+  before_action :topic_find, except: [:new,:create,:index]
   def index
     @topics = Topic.all
   end
+  
+  def topic_find
+    @topic = Topic.find(params[:id])
+  end
+    
 
   def show
-    @topic = Topic.find(params[:id])
     @bookmarks = @topic.bookmarks
   end
   
   def destroy
-    @topic = Topic.find(params[:id])
     if @topic.destroy
       flash[:notice]= "Tpoic was deleted"
       redirect_to topics_path
@@ -34,11 +39,9 @@ class TopicsController < ApplicationController
   end
   
    def edit
-     @topic = Topic.find(params[:id])
    end
   
   def update
-    @topic = Topic.find(params[:id])
     if @topic.update_attributes(topic_params)
       redirect_to @topic
       flash[:notice] = "Topic was updated"

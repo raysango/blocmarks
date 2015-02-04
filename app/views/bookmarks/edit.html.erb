@@ -1,0 +1,8 @@
+<h1>Edit Bookmark</h1>
+<%= form_for [@topic, @bookmark] do |f| %>
+<div class = "form-group">
+  <%= f.label :url %>
+  <%= f.text_area :url, class: 'form-control', placeholder: "Enter URL" %>
+</div>
+<%= f.submit "Save", class: 'btn btn-success' %>
+    <% end %>
