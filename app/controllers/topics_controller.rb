@@ -28,7 +28,8 @@ class TopicsController < ApplicationController
     @topic = Topic.new
   end
   def create
-    @topic = Topic.new(topic_params)
+    @user = current_user
+    @topic =@user.topics.new(topic_params)
     if @topic.save
       flash[:notice]= "Your Topic is Created"
       redirect_to @topic

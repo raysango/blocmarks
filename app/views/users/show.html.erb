@@ -1,0 +1,12 @@
+<h1>My Bookmarks</h1>
+<% @likes.pluck(:bookmark_id).each do |id| %>
+ <h2 style="color:green"><em><%= Bookmark.find(id).url %></em></h2>
+<%end%>
+
+<% @user.topics.pluck(:id).each do |topid| %>
+ <% Topic.find(topid).bookmarks.each do |bookmark| %>
+   <% unless @likes.pluck(:bookmark_id).include? bookmark.id %>
+     <h2 style="color:green"><em><%= bookmark.url %></em></h2>
+   <%end%>
+ <%end%>
+<%end%>
