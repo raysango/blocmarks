@@ -12,7 +12,7 @@ class Bookmark < ActiveRecord::Base
   end
   
   def set_embedly_url
-  embedly_api = Embedly::API.new :key => 'b8ee4ecd334a40a4b76f25a90cc8099e',:maxwidth => 550,
+  embedly_api = Embedly::API.new :key => ENV['EMBEDLY_API_KEY'],:maxwidth => 550,
   :wmode => 'transparent',
         :user_agent => 'Mozilla/5.0 (compatible; mytestapp/1.0; my@email.com)'
 
