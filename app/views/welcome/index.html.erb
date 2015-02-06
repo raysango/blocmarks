@@ -1,2 +1,25 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<br/>
+<div class="jumbotron">
+  <h1>Blocmarks</h1>
+  <p>Where you can share your favorite Bookmarks with your friends</p>
+  <p>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or 
+      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+  </p>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h2>As easy as sending an email.</h2>
+    <p>Either from your computer or cell phone just send your Bookmark and it will be shared instantly!.</p>
+  </div>
+  <div class="col-md-4">
+    <h2>The best in every topic of your life!</h2>
+    <p>Blocmarks is the center where all users share the best bookmarks they encountered.</p>
+  </div>
+  <div class="col-md-4">
+    <h2>You will find what you are looking for.</h2>
+    <p>Shopping Food Restaurants and much more!</p>
+  </div>
+</div>
+

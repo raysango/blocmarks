@@ -1,5 +1,6 @@
 class BookmarksController < ApplicationController
   before_action :book_find, except: [:new, :create]
+  respond_to :html, :js
   
   def book_find
     @bookmark = Bookmark.find(params[:id])
@@ -9,11 +10,12 @@ class BookmarksController < ApplicationController
   def destroy
     if @bookmark.destroy
       flash[:notice]= "Bookmark deleted"
-      redirect_to @topic
     else
       flash[:error]= "Try again later"
-      redirect_to @topic
     end
+    respond_with(@bookmark) do |format|
+       format.html { redirect_to @topic }
+     end
   end
   
   
