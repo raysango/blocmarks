@@ -6,7 +6,11 @@
 <% @user.topics.pluck(:id).each do |topid| %>
  <% Topic.find(topid).bookmarks.each do |bookmark| %>
    <% unless @likes.pluck(:bookmark_id).include? bookmark.id %>
-     <h2 style="color:green"><em><%= bookmark.url %></em></h2>
+<div class="row">
+  <h2 style="color:green"><%= link_to "#{bookmark.url}", bookmark.url %></h2>
+  <small>Source Topic <%= link_to "#{Topic.find(topid).title}", topic_path(topid)  %></small>
+</div>
+
    <%end%>
  <%end%>
 <%end%>

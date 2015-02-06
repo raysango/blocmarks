@@ -53,6 +53,6 @@ class BookmarksController < ApplicationController
   private
   
   def bookmark_params
-    params.require(:bookmark).permit(:url, :topic_id_id)
+    params.require(:bookmark).permit(:url, :topic_id_id, :thumbnail_url)
   end
 end

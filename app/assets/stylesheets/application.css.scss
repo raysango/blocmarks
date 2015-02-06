@@ -17,6 +17,20 @@
 .center-header {
   text-align: center;
 }
+.bookmark_container {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #cecece;
+  overflow: hidden;
+  padding: 10px;
+}
+
+
+.thumbnail {
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

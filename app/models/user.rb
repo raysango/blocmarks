@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :confirmable
-  has_many :topics
-  has_many :likes
+  has_many :topics, dependent: :destroy
+  has_many :likes, dependent: :destroy
   
   def liked(post)
     likes.where(bookmark_id: post.id).first

@@ -19,6 +19,7 @@ gem 'bootstrap-sass', '3.2.0.2'
 gem 'figaro', '1.0'
 #User Authentication
 gem 'devise'
+gem 'embedly'
 # User Authorization
 gem 'pundit'
 # Use Uglifier as compressor for JavaScript assets
