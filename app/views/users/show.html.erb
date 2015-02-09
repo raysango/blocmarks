@@ -1,6 +1,8 @@
 <h1>My Bookmarks</h1>
 <% @likes.pluck(:bookmark_id).each do |id| %>
- <h2 style="color:green"><em><%= Bookmark.find(id).url %></em></h2>
+<div class="row">
+<h2 style="color:green"><em><%= link_to "#{Bookmark.find(id).url}", Bookmark.find(id).url %></em></h2>
+</div>
 <%end%>
 
 <% @user.topics.pluck(:id).each do |topid| %>

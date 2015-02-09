@@ -12,7 +12,7 @@
        <br><div class="bookmark_container">
       <div class="thumbnail">
        <% link_text = bookmark.thumbnail_url.present? ? "<img src='#{bookmark.thumbnail_url}'/>".html_safe : bookmark.url %>
-    <%= link_to link_text, "#{bookmark.url}"%> 
+    <%= link_to link_text, "#{bookmark.url}", target: "_blank"%> 
     </div>
   </div>
      </div>
